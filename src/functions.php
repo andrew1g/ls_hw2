@@ -100,4 +100,19 @@ function task3($integer1, $integer2) {
 return $result;
 }
 
+//******************************* */
+function func_open_file_and_echo($filename) {
+  $fp = fopen($filename, 'r');
+  if (!$fp) {
+      return false;
+  }
+
+  $result_string = '';
+  while (!feof($fp)) {
+      $result_string .= fgets($fp, 512);
+  }
+
+  echo $result_string;
+}
+
 ?>
